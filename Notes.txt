@@ -1,0 +1,33 @@
+Steps To Run Tailwind
+
+1. Terminal
+npm init -y
+
+2. Terminal
+npm install -D tailwindcss
+npx tailwindcss init
+
+3. tailwind.config.js
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: ['./*html'],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+
+4. src/input.css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+5. package.json
+"scripts": {
+  "build": "tailwindcss -i ./input.css -o ./css/main.css",
+  "watch": "tailwindcss -i ./input.css -o ./css/main.css --watch"
+},
+
+6. Terminal
+npm run build
+npm run watch
